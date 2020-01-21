@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>作业调度-短作业优先</title>
+</head>
+
+<body>
+    <h3>作业调度-短作业优先</h3>
+    <button id="a">添加 A 作业</button>
+    <button id="b">添加 B 作业</button>
+    <button id="c">添加 C 作业</button>
+    <br/>
+    <br/>
+    <button id="dispatch-button">启动作业调度</button>
+    <br/>
+    <br/>
+    <button id="cpu-button">启动进程执行</button>
+    <hr />
+    <h3>添加作业</h3>
+    <p>用户名：<input id="job-user" type="text" name="" /></p>
+    <p>作业名：<input id="job-name" type="text" name="" /></p>
+    <!-- <p>优先数：<input type="text" name="" /></p> -->
+    <p>运行所需时间：<input id="job-nTime" type="text" name="" /></p>
+    <p>所需内存：<input id="job-nMemo" type="text" name="" /></p>
+    <p>所需磁盘：<input id="job-nDisk" type="text" name="" /></p>
+    <button id="add-job">添加到后备队列</button>
+    <script type="text/javascript" src="./index.js"></script>
+</body>
+
+</html>
