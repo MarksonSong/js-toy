@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>module-definition-tool</title>
+</head>
+
+<body>
+    <script type="text/javascript" src="./mmd.js"></script>
+    <script type="text/javascript">
+        /**
+         * @description: 定义模块a，提供max与first函数
+         * @return: {Object} 模块导出的部分
+         */
+        MMD.define('a', [], () => {
+            console.log('Module a is defined.')
+            return {
+                first(arr) {
+                    return arr[0]
+                },
+                max(arr) {
+                    arr.sort((a, b) => {
+                        return b - a
+                    })
+                    return arr[0]
+                }
+            }
+        })
+
+        /**
+         * @description: 定义模块b，使用a的max与first函数
+         */
+        MMD.define('b', ['a'], (a) => {
+            console.log('Module b is defined.')
+            let arr = [1, 2, 4, 6]
+            console.log('b调用了a的max', a.max(arr));
+            console.log('b调用了a的first', a.first([1, 2, 4, 6]));
+        })
+    </script>
+</body>
+
+</html>
