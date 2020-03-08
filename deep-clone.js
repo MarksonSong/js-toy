@@ -32,41 +32,38 @@ const isObject = (obj) => {
 }
 
 // 测试数组
-let a = [0, 1, [2, 3], 4],
-  b = deepClone(a)
-a[0] = 1
-a[2][0] = 1
-console.log(a, b)
+let arr = [0, 1, [2, 3], 4],
+  arrClone = deepClone(arr)
+arr[0] = 1
+arr[2][0] = 1
+console.log(arr, arrClone)
 
 // 测试对象
-var aa = {
+let obj = {
   id: 1,
   name: 2,
   c: {
     age: 3
   }
 },
-  bb = deepClone(aa)
-aa['id'] = 100
-aa['c']['age'] = 300
-console.log(aa, bb)
+  objClone = deepClone(obj)
+obj.id = 100
+obj.c.age = 300
+console.log(obj, objClone)
 
 // 测试成环对象
-var aaa = {
+let cir = {
   id: 1,
   name: 2,
   c: {
     age: 3
   }
 }
-// 致使栈溢出
-aaa.loop = aaa
-aaa.haha = 'haha'
-var bbb = deepClone(aaa)
-aaa['id'] = 100
-aaa['c']['age'] = 300
-console.log(aaa, bbb)
+cir.loop = cir
+let cirClone = deepClone(cir)
+cir.id = 1000
+cir.c.age = 3000
+console.log(cir, cirClone)
 
 // 异常测试
-deepClone(1)
-console.log()
+console.log(deepClone(1))
